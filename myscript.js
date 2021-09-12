@@ -135,43 +135,92 @@ Usiamo i nuovi metodi degli array forEach() o filter().*/
 
 let numeri = [1, 2, 21, 5, 78, 40, 51, 8, 9];
 
-let a = 3;
 
-let b = 7;
+function createNewList(listaNumeri, a, b) {
+
+    let sottoLista = [];
+
+    // FOR EACH
+    listaNumeri.forEach(createNewList)    
+    function createNewList(element, index) {
+
+        if(a < index && index < b) {
+
+            sottoLista.push(element);
+
+        }
+    
+    }
+    // Fine FOR EACH
+
+    return sottoLista;
+
+    /*
+    //FOR CLASSICO
+    for(let i=0; i<listaNumeri.length; i++) {
+        if(a < i && i < b) {
+
+            sottoLista.push(listaNumeri[i]);
+
+        }
+    }
+    */
+
+    /*
+    //FILTER
+    let sottoLista = listaNumeri.filter((numero) => {
+
+        if (numeri.indexOf(numero) > a && numeri.indexOf(numero) < b){
+            return true
+        } 
+     
+    });
+    console.log(sottoLista)
+    */
+}
+
+let myList = createNewList(numeri, 3, 7);
+console.log(myList) //questo serve per il ciclo for
+
+
+
 
 /*
-//prova con forEach: funziona ma non credo sia corretto
-let newArr = [];
+//FOR EACH: funziona ma non come richiesto da consegna
+let myList = [];
 
-numeri.forEach(newList);
+numeri.forEach(createNewList);
 
-function newList(elemento, index) {
-   if (index > a && index < b){
-       newArr.push(elemento);
+function createNewList(elemento, index, array) {
+   
+   
+   
+    if (index > a && index < b){
+       myList.push(elemento);
    }
    
 }
 
-console.log(newArr)*/
+console.log(myList)*/
 
 
-//prova con filter: funziona ma non so se è corretto
-/*const numbersList = numeri.filter(numero => numeri.indexOf(numero) > a && numeri.indexOf(numero) < b);
-console.log(numbersList)*/
+//FILTER: funziona ma non come richiesto da consegna
+/*const myList = numeri.filter(numero => numeri.indexOf(numero) > a && numeri.indexOf(numero) < b);
+console.log(myList)*/
 
 
-//prova con sintassi filter diversa: funziona ma non so se è corretto (vedi prima prova con filter)
+//FILTER con sintassi diversa: funziona ma non come richiesto da consegna
+
 /*
-const numbersList = numeri.filter((numero) => {
+const myList = numeri.filter((numero) => {
 
     if (numeri.indexOf(numero) > a && numeri.indexOf(numero) < b){
         return true
     } 
  
 });
-console.log(numbersList)
+console.log(myList))
 */
-
 
 
 
